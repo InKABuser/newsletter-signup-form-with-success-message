@@ -1,0 +1,266 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(assets/fonts/Roboto-Regular.woff2) format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto-bold';
+    src: url(assets/fonts/Roboto-Bold.woff2) format('woff2');
+    font-display: swap;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+    font-family: 'Roboto';
+    --Dark-Slate-Grey: hsl(234, 29%, 20%);
+    --Charcoal-Grey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+  }
+  
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    height: 100vh;
+  }
+  
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    padding:  0 1em;
+    gap: 1em;
+  }
+  .form-container h2 {
+    font-size: 2em;
+    font-family: 'Roboto-bold';
+    color: var(--Dark-Slate-Grey);
+  }
+  .text-under-title {
+    font-size: 1em;
+    color: var(--Charcoal-Grey);
+  }
+
+
+
+
+
+
+
+  .features-list {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  .list-item {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    font-size: 1em;
+    align-items: flex-start;
+    color: var(--Charcoal-Grey);
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  .form label{
+    color: var(--Charcoal-Grey);
+    display: flex;
+    justify-content: space-between;
+  }
+  .validE {
+    display: none;
+    color: red;
+    font-size: 0.7em;
+  }
+  .form input {
+    margin-top: .2em;
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 0.5em;
+    border: 1px solid var(--Grey) ;
+
+  }
+  .form button {
+    padding: 1em;
+    background-color: var(--Dark-Slate-Grey) ;
+    border-radius: .5em;
+    color: var(--White);
+    border: none;
+  }
+  .form button:active {
+    background-color: hsl(4, 100%, 67%);
+    cursor: pointer;
+  }
+  .form button:hover {
+    background-color: hsl(4, 100%, 67%);
+    cursor: pointer;
+  }
+
+
+  input[type = "email"].error {
+    border: 1px solid red;
+    color: hsl(4, 100%, 67%);
+    background-color: hsl(2, 100%, 93%);
+  }
+
+
+  /*  */
+  .successMessage {
+    display: none;
+    background-color: white;
+    max-width: 400px;
+    padding: 2em 3em;
+    border-radius: 1em;
+    display: grid;
+    height: 100vh;
+    place-content: center;
+    gap: 1em;
+    grid-template-rows: 1fr 1fr;
+  }
+  .text-c {
+    place-self: end;
+  }
+  .btn-div {
+    align-self: end;
+  }
+  .successMessage h1 {
+    font-size: 2em;
+    color: var(--Dark-Slate-Grey);
+    font-family: 'Roboto-bold';
+  }
+  .successMessage p {
+    font-size: .8em;
+    color: var(--Charcoal-Grey);
+  }
+  .successMessage p span {
+    font-family: 'Roboto-bold';
+    
+  }
+  .success-message-img {
+    width: 3em;
+  }
+  .successMessage button {
+    padding: .7em;
+    width: 100%;
+    border-radius: .5em;
+    border: none;
+    background-color: var(--Dark-Slate-Grey);
+    color: #ffffff;
+  }
+  .successMessage button:hover {
+    background-color: hsl(4, 100%, 67%);
+    cursor: pointer;
+  }
+
+
+
+
+  /*  */
+
+  @media screen and (min-width: 500px) {
+    body {
+      display: grid;
+      place-content: center;
+      background-color: var(--Dark-Slate-Grey);
+  }
+    .successMessage {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
+    .btn-div {
+      align-self: start;
+      width: 100%;
+    }
+  }
+
+  @media  screen and (min-width: 720px) {
+    body {
+        display: grid;
+        place-content: center;
+        background-color: var(--Dark-Slate-Grey);
+    }
+        .container {
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--White);
+            padding: 1em;
+            border-radius: 1.5em;
+        }
+        .text-under-title {
+          max-width: 40ch;
+        }
+        .main-img{
+            order: 2;
+            max-height: 500px;
+        }
+        .form-container {
+          padding: 2em;
+        }
+        .form-container h2{
+          font-size: 2.5em;
+      }
+
+  }
+
+  @media screen and (min-width: 1000px) {
+    .form-container h2{
+        font-size: 3.5em;
+    }
+  }
